@@ -4,25 +4,29 @@ function greeUser() {
 }
 greeUser();
 
+
 // Task 2 — Function With a Parameter
 function greetUser(name) {
   console.log(`Hello ${name}`);
 }
-// greetUser("Ali");
+greetUser("Ali");
+
 
 // Task 3 — Add Two Numbers
 function add(a, b) {
   return a + b;
 }
 let sum = add(5, 6);
-// console.log(`sum: ${sum}`);
+console.log(`sum: ${sum}`);
+
 
 // Task 4 — Calculate Rectangle Area
 function rectangleArea(width, length) {
   return width * length;
 }
 let area = rectangleArea(10, 18);
-// console.log(`Area of Rectangle : ${area}`);
+console.log(`Area of Rectangle : ${area}`);
+
 
 // Task 5 — Check Even or Odd
 function checkEvenOdd(num) {
@@ -32,7 +36,8 @@ function checkEvenOdd(num) {
     return "odd";
   }
 }
-// console.log(checkEvenOdd(18));
+console.log(checkEvenOdd(18));
+
 
 // Task 6 — Positive, Negative, or Zero
 function checkNumber(num) {
@@ -44,7 +49,8 @@ function checkNumber(num) {
     return "Zero";
   }
 }
-// console.log(checkNumber(990));
+console.log(checkNumber(990));
+
 
 // Task 7 — Find the Largest of Two Numbers
 function findLargest(a, b) {
@@ -56,7 +62,7 @@ function findLargest(a, b) {
     return `Both are Equal`;
   }
 }
-// console.log(findLargest(19, 14));
+console.log(findLargest(19, 14));
 
 // Task 8 — Find the Largest of Three Numbers
 function findLargest(a, b, c) {
@@ -76,7 +82,8 @@ function findLargest(a, b, c) {
     return `${b} and ${c} are equal and largest`;
   }
 }
-// console.log(findLargest(100, 19, 62));
+console.log(findLargest(100, 19, 62));
+
 
 // Task 9 — Calculate Grade
 function calculateGrade(marks) {
@@ -98,7 +105,8 @@ function calculateGrade(marks) {
     return `Fail`;
   }
 }
-// console.log(calculateGrade(65));
+console.log(calculateGrade(65));
+
 
 // Task 10 — Login Checker
 function checkLogin(username, Password) {
@@ -108,7 +116,8 @@ function checkLogin(username, Password) {
     return `Invalid username or password`;
   }
 }
-// console.log(checkLogin("admin", "admin123"));
+console.log(checkLogin("admin", "admin123"));
+
 
 // Task 11 — Simple Calculator
 function Calculator(a, b, operator) {
@@ -136,7 +145,8 @@ function Calculator(a, b, operator) {
     return `Invalid operator`;
   }
 }
-// console.log(Calculator(8, 9, "/"));
+console.log(Calculator(8, 9, "/"));
+
 
 // Task 12 — Temperature Converter
 function celsiusToFahrenheit(celsius) {
@@ -145,9 +155,95 @@ function celsiusToFahrenheit(celsius) {
 }
 console.log(celsiusToFahrenheit(0));
 
+
 function fahrenheitToCelsius(fahrenheit) {
   let C = ((fahrenheit - 32) * 5) / 9;
   return C;
 }
 console.log(fahrenheitToCelsius(32));
 
+// Task 13 — Function Calling Another Function
+function getFullname(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
+
+function welcomeMessage(fullName) {
+  return `Welcome ${fullName}`;
+}
+
+function displayUser(firstName, lastName) {
+  let fullName = getFullname(firstName, lastName);
+  let message = welcomeMessage(fullName);
+
+  return message;
+}
+let finalResult = displayUser("Fawad", "Khan!");
+console.log(finalResult);
+
+
+// Task 14 — Order Processing System
+function createOrder(product, quantity) {
+  return `${product} x ${quantity}`;
+}
+function calculateTotal(price, quantity) {
+  return price * quantity;
+}
+function generateReceipt(product, quantity, total) {
+  return `Product: ${product}
+          Quantity: ${quantity}
+          Total: ${total}`;
+}
+function processOrder(price, product, quantity) {
+  let order = createOrder(product, quantity);
+  let total = calculateTotal(price, quantity);
+  let Receipt = generateReceipt(product, quantity, total);
+  return `${order}
+          ${Receipt}
+          Order Confirmed!`;
+}
+
+let finalReceipt = processOrder(200000, "Laptop", 2);
+console.log(finalReceipt);
+
+
+// Task 15: Student Result System
+function calculateTotal(m1, m2, m3) {
+  return m1 + m2 + m3;
+}
+function calculatePercentage(total, totalMarks) {
+  let percent = (total * 100) / totalMarks;
+  return percent;
+}
+function calculateGrade(percentage) {
+  if (percentage === 100) {
+    return `A1 Grade`;
+  } else if (percentage >= 90) {
+    return `A Grade`;
+  } else if (percentage >= 80) {
+    return `B Grade`;
+  } else if (percentage >= 70) {
+    return `C Grade`;
+  } else if (percentage >= 60) {
+    return `D grade`;
+  } else if (percentage > 50) {
+    return `E Grade`;
+  } else if (percentage === 50) {
+    return `Just Passed`;
+  } else {
+    return `Fail`;
+  }
+}
+function generateResult(name, total, percentage, grade) {
+  return `Name : ${name}
+          total : ${total}
+          Percentage : ${percentage}
+          grade : ${grade}`;
+}
+function processStudentResult(name, m1, m2, m3, totalMarks) {
+  let sum = calculateTotal(m1, m2, m3);
+  let percentage = calculatePercentage(sum, totalMarks);
+  let grade = calculateGrade(percentage);
+  let Result = generateResult(name, sum, percentage, grade);
+  return Result;
+}
+console.log(processStudentResult("Fawad", 78, 82, 77, 300));
