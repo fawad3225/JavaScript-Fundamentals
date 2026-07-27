@@ -1,18 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-    <style>
-        body{
-            background-color: #1a1a1a;
-            color: #fff;
+<!doctype html>
+<html>
+  <body>
+    <!-- 1. location — Redirect Button
+Real Use: A "Go to Homepage" button, or redirecting after clicking something. -->
+    <!-- <button onclick="goToChrome()">Visit Google</button>
+
+    <script>
+      function goToChrome() {
+        location.href = "https://google.com";
+      }
+    </script> -->
+
+    <!--2. navigator.onLine — Show Internet Status
+Real Use: Showing a message if the user loses internet connection.  -->
+    <!-- <p id="status"></p>
+
+    <script>
+      if (navigator.onLine) {
+        document.getElementById("status").textContent = "✅ You are online";
+      } else {
+        document.getElementById("status").textContent = "❌ You are offline";
+      }
+    </script> -->
+
+    <!-- 3. screen — Adjust Message Based on Screen Size
+Real Use: Showing different content/messages depending on device screen size (very simplified version of responsive logic). -->
+    <!-- <p id="deviceMsg"></p>
+
+    <script>
+      if (screen.width < 768) {
+        document.getElementById("deviceMsg").textContent =
+          "You're on a small screen (mobile)";
+      } else {
+        document.getElementById("deviceMsg").textContent =
+          "You're on a large screen (desktop)";
+      }
+    </script> -->
+
+    <!-- 4. confirm() — Delete Confirmation Popup
+Real Use: Every "Delete" button in real apps (like deleting a product, comment, or account) uses this pattern. -->
+    <!-- <button onclick="deleteItem()">Delete Item</button>
+    <script>
+      function deleteItem() {
+        const isSure = confirm("Are you sure you want to delete this item?");
+        if (isSure) {
+          alert("Item deleted!");
+        } else {
+          alert("Deletion cancelled");
         }
-    </style>
-    <script src="script.js" defer></script>
-</head>
-<body>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-</body>
+      }
+    </script> -->
+
+    <!-- 5. setTimeout — Auto-Hide a Success Message
+Real Use: "Item added to cart!" messages that disappear after a few seconds. -->
+    <button onclick="showMessage()">Add to Cart</button>
+    <p id="msg"></p>
+
+    <script>
+      function showMessage() {
+        const msg = document.getElementById("msg");
+        msg.textContent = "✅ Added to cart!";
+
+        setTimeout(() => {
+          msg.textContent = ""; // message disappears after 2 seconds
+        }, 2000);
+      }
+    </script>
+  </body>
 </html>
