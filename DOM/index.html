@@ -1,20 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
-    <style>
-        body{
-            background-color: black;
-        }
-        h1{
-            color: white;
-        }
-    </style>
-    <script src="script.js" defer></script>
+  <title>DOM Practice</title>
 </head>
 <body>
-    <h1>Hello to the world of DOM!</h1>
+  <h1 id="title">Hello World</h1>
+  <p class="description">This is a paragraph.</p>
+  <button id="changeBtn">Change Text</button>
+  <button id="colorBtn">Change Color</button>
+
+  <script>
+    // Selecting elements
+    const title = document.getElementById("title");
+    const description = document.querySelector(".description");
+    const changeBtn = document.getElementById("changeBtn");
+    const colorBtn = document.getElementById("colorBtn");
+
+    // Changing content on click
+    changeBtn.addEventListener("click", () => {
+      title.textContent = "You changed me! 🎉";
+      description.textContent = "The text has been updated using JavaScript.";
+    });
+
+    // Changing style on click
+    colorBtn.addEventListener("click", () => {
+      title.style.color = "tomato";
+      description.style.fontStyle = "italic";
+    });
+  </script>
 </body>
 </html>
