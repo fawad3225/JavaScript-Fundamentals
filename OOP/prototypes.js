@@ -6,9 +6,9 @@ let Lenovo = {
   screen: "HD",
   __proto__: computer,
 };
-// console.log(Lenovo.__proto__);
-// console.log(Lenovo.Cpu);
-// console.log(Lenovo);
+console.log(Lenovo.__proto__);
+console.log(Lenovo.Cpu);
+console.log(Lenovo);
 
 // Type 2
 let car = { tyres: 4 };
@@ -17,3 +17,6 @@ let tesla = {
 };
 Object.setPrototypeOf(tesla, car);
 console.log(Object.getPrototypeOf(tesla));
+
+//Creating object and working with prototype
+
