@@ -19,4 +19,15 @@ Object.setPrototypeOf(tesla, car);
 console.log(Object.getPrototypeOf(tesla));
 
 //Creating object and working with prototype
+const Employee = {
+  calcTax() {
+    console.log("Tex is 10%");
+  },
+};
+
+const Fawad = {
+  salary: 50000,
+  __proto__: Employee,
+};
+console.log(Fawad.calcTax());
 
